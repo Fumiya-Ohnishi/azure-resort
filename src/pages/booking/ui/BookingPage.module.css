@@ -71,6 +71,12 @@
   margin-bottom: var(--sp-14);
 }
 
+@media (min-width: 768px) {
+  .progress {
+    margin-bottom: 24px;
+  }
+}
+
 .progressStep {
   display: flex;
   align-items: center;
@@ -124,6 +130,7 @@
 @media (min-width: 900px) {
   .layout {
     grid-template-columns: 1fr 340px;
+    gap: 16px;
   }
 }
 
@@ -176,6 +183,13 @@
   .dateRow { grid-template-columns: repeat(3, 1fr); }
 }
 
+@media (min-width: 768px) {
+  .dateRow {
+    gap:  8px;
+    margin: 16px;
+  }
+}
+
 .fieldGroup {
   display: flex;
   flex-direction: column;
@@ -183,8 +197,10 @@
   margin-bottom: var(--sp-5);
 }
 
-.fieldGroup:last-child {
-  margin-bottom: 0;
+@media (min-width: 768px) {
+  .fieldGroup {
+    margin-bottom: 16px;
+  }
 }
 
 .label {
@@ -251,7 +267,7 @@
 }
 
 .roomOption {
-  padding: var(--sp-5) var(--sp-6) var(--sp-6);
+  padding: 16px;
   border-radius: var(--r-md);
   border: 1.5px solid rgba(11,31,58,0.1);
   text-align: left;
@@ -318,6 +334,12 @@
   transition: border-color var(--ease-base), background var(--ease-base);
   cursor: pointer;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .planOption {
+    padding: 8px;
+  }
 }
 
 .planOption:hover {
