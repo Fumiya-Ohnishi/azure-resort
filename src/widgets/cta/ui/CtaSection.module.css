@@ -1,0 +1,93 @@
+.section {
+  position: relative;
+  padding: var(--section-py) 0;
+  background: linear-gradient(160deg, #050D1A 0%, #081830 60%, #0B1F3A 100%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.w1 { animation: waveFlow 14s ease-in-out infinite; }
+.w2 { animation: waveFlow 10s ease-in-out infinite 2s; }
+.w3 { animation: waveFlow  8s ease-in-out infinite 1s; }
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.26em;
+  color: var(--color-aqua);
+  font-weight: 500;
+  margin-bottom: var(--sp-6);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--color-white);
+  line-height: 1.15;
+  margin-bottom: var(--sp-6);
+  letter-spacing: 0.02em;
+}
+
+.headingAccent {
+  color: var(--color-aqua);
+}
+
+.desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 2;
+  margin-bottom: var(--sp-10);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-12);
+}
+
+.quote {
+  padding: var(--sp-8) 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.quote p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: var(--sp-2);
+  letter-spacing: 0.04em;
+}
+
+.quote cite {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.28);
+  font-style: normal;
+}

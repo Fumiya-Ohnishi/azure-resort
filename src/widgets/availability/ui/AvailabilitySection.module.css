@@ -1,0 +1,165 @@
+.section {
+  position: relative;
+  padding: var(--section-py) 0;
+  background: linear-gradient(160deg, #050D1A 0%, #0B1F3A 50%, #0D2B4E 100%);
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgWave {
+  width: 100%;
+  height: 100%;
+}
+
+.wavePath1 { animation: waveFlow 14s ease-in-out infinite; }
+.wavePath2 { animation: waveFlow 10s ease-in-out infinite 2s; }
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr 380px;
+  }
+}
+
+.calendarWrap {
+  /* let the FadeIn div fill */
+}
+
+/* Info panel */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.infoBox {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.infoIcon {
+  flex-shrink: 0;
+}
+
+.selectedDate {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.selectedLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--color-aqua);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.selectedValue {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--color-white);
+}
+
+.selectedNote {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.prompt {}
+
+.promptTitle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-white);
+  margin-bottom: var(--sp-2);
+}
+
+.promptText {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  opacity: 0.4;
+  transition: opacity var(--ease-base);
+}
+
+.activeStep {
+  opacity: 1;
+}
+
+.stepNum {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: rgba(0,180,200,0.2);
+  border: 1px solid rgba(0,180,200,0.4);
+  color: var(--color-aqua);
+  flex-shrink: 0;
+}
+
+.activeStep .stepNum {
+  background: var(--color-turquoise);
+  border-color: var(--color-turquoise);
+  color: var(--color-white);
+}
+
+.stepLabel {
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+}
+
+.stepArrow {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  margin-left: var(--sp-1);
+}
+
+.note {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  line-height: 1.9;
+  text-align: center;
+}

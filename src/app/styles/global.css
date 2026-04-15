@@ -1,0 +1,180 @@
+/* ========================================
+   AZURE RESORT & SPA — Global Styles
+   ======================================== */
+
+:root {
+  /* Color Palette */
+  --color-navy:        #0B1F3A;
+  --color-deep-blue:   #0D2B4E;
+  --color-ocean:       #1A4A7A;
+  --color-ocean-mid:   #1B6CA8;
+  --color-turquoise:   #00B4C8;
+  --color-aqua:        #4DD9E8;
+  --color-aqua-light:  #A8F0F4;
+  --color-sand:        #C8A96E;
+  --color-sand-light:  #E8D5A3;
+  --color-sand-pale:   #F5EDD8;
+  --color-cream:       #FBF8F3;
+  --color-white:       #FFFFFF;
+  --color-text-dark:   #0B1F3A;
+  --color-text-mid:    #4A5568;
+  --color-text-light:  rgba(255, 255, 255, 0.88);
+  --color-text-muted:  rgba(255, 255, 255, 0.55);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans:  'Noto Sans JP', 'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* Transitions */
+  --ease-base:   0.3s ease;
+  --ease-smooth: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-slow:   1.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-xs:   0 2px 6px  rgba(11, 31, 58, 0.06);
+  --shadow-sm:   0 4px 16px rgba(11, 31, 58, 0.10);
+  --shadow-md:   0 8px 32px rgba(11, 31, 58, 0.14);
+  --shadow-lg:   0 16px 60px rgba(11, 31, 58, 0.18);
+  --shadow-glow: 0 0 48px   rgba(0, 180, 200, 0.22);
+  --shadow-sand: 0 8px 32px rgba(200, 169, 110, 0.18);
+
+  /* Border Radius */
+  --r-sm:   4px;
+  --r-md:   12px;
+  --r-lg:   20px;
+  --r-xl:   32px;
+  --r-full: 9999px;
+
+  /* Layout */
+  --max-w:        1280px;
+  --header-h:     80px;
+  --section-py:   var(--sp-24);
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--color-text-dark);
+  background-color: var(--color-cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ---- Utility ---- */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--sp-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 var(--sp-12);
+  }
+}
+
+/* ---- Scroll Animation Base ---- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Global Wave Keyframes ---- */
+@keyframes waveFlow {
+  0%   { transform: translateX(0) scaleY(1); }
+  50%  { transform: translateX(-3%) scaleY(1.04); }
+  100% { transform: translateX(0) scaleY(1); }
+}
+
+@keyframes shimmer {
+  0%   { opacity: 0.5; transform: scale(1) rotate(0deg); }
+  50%  { opacity: 0.9; transform: scale(1.06) rotate(1deg); }
+  100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 180, 200, 0.3); }
+  50%       { box-shadow: 0 0 50px rgba(0, 180, 200, 0.6); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

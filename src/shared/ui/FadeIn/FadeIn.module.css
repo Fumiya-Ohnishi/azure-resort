@@ -1,0 +1,15 @@
+.root {
+  opacity: 0;
+  transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.up    { transform: translateY(32px); }
+.left  { transform: translateX(-32px); }
+.right { transform: translateX(32px); }
+.none  { transform: none; }
+
+.visible {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
