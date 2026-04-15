@@ -1,9 +1,7 @@
 import { Button } from '@/shared'
-import { useRouter } from '@/app/providers/router'
 import styles from './HeroSection.module.css'
 
 export function HeroSection() {
-  const { navigate } = useRouter()
 
   const scrollToAvailability = () => {
     const el = document.querySelector('#availability')
